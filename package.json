@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --report --dest docs",
+    "build": "vue-cli-service build --report",
     "lint": "vue-cli-service lint",
     "ui": "vue ui"
   },
