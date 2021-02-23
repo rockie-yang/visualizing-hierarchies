@@ -12,13 +12,14 @@ function resolve(dir) {
  * @type { Options }
  */
 module.exports = {
+  // publicPath: '/visualizing-hierarchies/',
   css: {
     sourceMap: true
   },
-  filenameHashing:     true,
+  filenameHashing: true,
   productionSourceMap: false,
-  runtimeCompiler:     true,
-  lintOnSave:          true,
+  runtimeCompiler: true,
+  lintOnSave: true,
 
   configureWebpack: config => {
     /**
@@ -28,14 +29,14 @@ module.exports = {
     config.plugins.push(
       new CopyWebpackPlugin([
         {
-          from:   resolve('datasets'),
+          from: resolve('datasets'),
           ignore: ['.*'],
-          to:     'datasets'
+          to: 'datasets'
         },
         {
-          from:   resolve('static'),
+          from: resolve('static'),
           ignore: ['.*'],
-          to:     'static'
+          to: 'static'
         }
       ])
     )
@@ -58,16 +59,16 @@ module.exports = {
       const TerserPlugin = require('terser-webpack-plugin')
       config.optimization.minimizer.push(
         new TerserPlugin({
-          parallel:      4,
+          parallel: 4,
           terserOptions: {
             compress: {
-              drop_console:  true,
-              dead_code:     true,
+              drop_console: true,
+              dead_code: true,
               drop_debugger: true,
-              unused:        true,
-              passes:        16
+              unused: true,
+              passes: 16
             },
-            mangle:   true,
+            mangle: true,
             safari10: true
 
           }
@@ -78,7 +79,7 @@ module.exports = {
       config.plugins.push(
         new UnusedPlugin({
           directories: [resolve('src')],
-          exclude:     ['unused']
+          exclude: ['unused']
         })
       )
 

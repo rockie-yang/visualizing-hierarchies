@@ -14,7 +14,7 @@ import './utils/webFonts'
 
 // ! Available in production as well...
 Vue.component('OpenButton', () => import('@/utils/OpenButton.vue'))
-
+// Vue.http.options.root = 'https://rockie-yang.github.io/';
 /**
  * .########..########.##.....##.....#######..##....##.##.......##....##
  * .##.....##.##.......##.....##....##.....##.###...##.##........##..##.
@@ -30,9 +30,9 @@ if (process.env.NODE_ENV === 'development') {
    */
   Object.assign(window, {
     dev: {
-      d3:          require('d3'),
-      _:           require('lodash'),
-      SuffixTree:  require('./utils/suffix-tree').default,
+      d3: require('d3'),
+      _: require('lodash'),
+      SuffixTree: require('./utils/suffix-tree').default,
       html2canvas: require('html2canvas'),
       store,
       Vue
